@@ -1,58 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.9.13 on win32)" generated="20230119 15:08:32.898" rpa="false" schemaversion="3">
-<suite id="s1" name="Demo4" source="C:\robot_project\robot_suite\demo4.robot">
-<test id="s1-t1" name="TC4" line="24">
-<kw name="Set Variable" library="BuiltIn">
-<var>${num1}</var>
-<arg>$200,100</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230119 15:08:32.980" level="INFO">${num1} = $200,100</msg>
-<status status="PASS" starttime="20230119 15:08:32.979" endtime="20230119 15:08:32.984"/>
+<robot generator="Robot 6.0.2 (Python 3.9.13 on win32)" generated="20230120 17:36:30.375" rpa="false" schemaversion="3">
+<suite id="s1" name="Demo1 App Launch" source="C:\robot_project\robot_suite\appium_suite\demo1_app_launch.robot">
+<test id="s1-t1" name="TC2" line="18">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dic}</var>
+<arg>buildName=khan lt7</arg>
+<arg>projectName=khan project lt7</arg>
+<arg>userName=priyakanojiya_8JV1Zl</arg>
+<arg>accessKey=soMZhau7xzwzdT9X8mwr</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230120 17:36:30.714" level="INFO">${dic} = {'buildName': 'khan lt7', 'projectName': 'khan project lt7', 'userName': 'priyakanojiya_8JV1Zl', 'accessKey': 'soMZhau7xzwzdT9X8mwr'}</msg>
+<status status="PASS" starttime="20230120 17:36:30.713" endtime="20230120 17:36:30.716"/>
 </kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${num2}</var>
-<arg>$200</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230119 15:08:32.986" level="INFO">${num2} = $200</msg>
-<status status="PASS" starttime="20230119 15:08:32.985" endtime="20230119 15:08:32.986"/>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>remote_url=http://hub.browserstack.com/wd/hub</arg>
+<arg>platformName=android</arg>
+<arg>deviceName=Google Pixel 3</arg>
+<arg>app=bs://dd8826b0adf4f4cbc6acf0a367899fb1ed32891a</arg>
+<arg>platformVersion=9.0</arg>
+<arg>bsatck:options=${dic}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20230120 17:36:31.363" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20230120 17:36:31.362" endtime="20230120 17:36:31.373"/>
 </kw>
-<kw name="Remove String" library="String">
-<var>${N1}</var>
-<arg>${num1}</arg>
-<arg>$</arg>
-<doc>Removes all ``removables`` from the given ``string``.</doc>
-<msg timestamp="20230119 15:08:32.987" level="INFO">${N1} = 200,100</msg>
-<status status="PASS" starttime="20230119 15:08:32.986" endtime="20230119 15:08:32.988"/>
+<msg timestamp="20230120 17:36:31.374" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20230120 17:36:31.375" level="FAIL">WebDriverException: Message: Authorization required
+</msg>
+<status status="FAIL" starttime="20230120 17:36:30.717" endtime="20230120 17:36:31.377"/>
 </kw>
-<kw name="Remove String" library="String">
-<var>${N2}</var>
-<arg>${num2}</arg>
-<arg>$</arg>
-<doc>Removes all ``removables`` from the given ``string``.</doc>
-<msg timestamp="20230119 15:08:32.990" level="INFO">${N2} = 200</msg>
-<status status="PASS" starttime="20230119 15:08:32.989" endtime="20230119 15:08:32.990"/>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='Dismiss']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="NOT RUN" starttime="20230120 17:36:31.377" endtime="20230120 17:36:31.377"/>
 </kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${num3}</var>
-<arg>${N1}+${N2}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20230119 15:08:32.990" level="INFO">${num3} = (200, 300)</msg>
-<status status="PASS" starttime="20230119 15:08:32.990" endtime="20230119 15:08:32.990"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='Dismiss']</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20230120 17:36:31.378" endtime="20230120 17:36:31.378"/>
 </kw>
-<status status="PASS" starttime="20230119 15:08:32.977" endtime="20230119 15:08:32.990"/>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.TextView[@text='Sign in']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="NOT RUN" starttime="20230120 17:36:31.378" endtime="20230120 17:36:31.378"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.TextView[@text='Sign in']</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20230120 17:36:31.378" endtime="20230120 17:36:31.379"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20230120 17:36:31.379" endtime="20230120 17:36:31.379"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20230120 17:36:31.380" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20230120 17:36:31.380" endtime="20230120 17:36:31.381"/>
+</kw>
+<msg timestamp="20230120 17:36:31.382" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20230120 17:36:31.383" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20230120 17:36:31.379" endtime="20230120 17:36:31.384">No application is open</status>
+</kw>
+<status status="FAIL" starttime="20230120 17:36:30.712" endtime="20230120 17:36:31.384">WebDriverException: Message: Authorization required
+
+
+Also teardown failed:
+No application is open</status>
 </test>
-<status status="PASS" starttime="20230119 15:08:32.898" endtime="20230119 15:08:32.996"/>
+<status status="FAIL" starttime="20230120 17:36:30.379" endtime="20230120 17:36:31.386"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Demo4">Demo4</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Demo1 App Launch">Demo1 App Launch</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20230120 17:36:31.374" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20230120 17:36:31.382" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
 </errors>
 </robot>

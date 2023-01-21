@@ -14,7 +14,6 @@ TC1
     Sleep    10s
     Close Application
 
-*** Test Cases ***
 TC2
     ${dic}      Create Dictionary       buildName=khan lt7
     ...         projectName=khan project lt7
@@ -26,7 +25,7 @@ TC2
     ...     deviceName=Google Pixel 3
     ...     app=bs://dd8826b0adf4f4cbc6acf0a367899fb1ed32891a
     ...     platformVersion=9.0
-    ...     bsatck:options=${dic}
+    ...     bstack:options=${dic}
 
     Wait Until Page Contains Element      xpath=//*[@text='Dismiss']
     Click Element      xpath=//*[@text='Dismiss']

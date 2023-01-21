@@ -54,6 +54,9 @@ TC1 Sign Up
     Input Text     xpath=(//android.widget.EditText[@resource-id='android:id/numberpicker_input'])[3]     2001
     Wait Until Page Contains Element    xpath=//android.widget.Button[@text='OK']
     Click Element    xpath=//android.widget.Button[@text='OK']
+    Input Text    xpath=//android.widget.EditText[@text='Email address']    priya@1234
+    Input Password    xpath=//android.widget.EditText[@text='Password']     priya123
+    Click Element    xpath=//android.widget.TextView[@text='CREATE']
     ${page_source}  Get Source
     Log To Console    ${page_source}
     Sleep    10s

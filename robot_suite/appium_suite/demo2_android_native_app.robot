@@ -61,3 +61,5 @@ TC1 Sign Up
     Log To Console    ${page_source}
     Sleep    10s
     [Teardown]   Close Application
+
+    
